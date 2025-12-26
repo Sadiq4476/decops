@@ -2,26 +2,26 @@ name: "CI/CD"
 
 on:
   push:
-    branchs: [ main ]
+    branches: [ main ]
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-steps:
-  - name: checkout-code
-    uses: actions/checkout@v5
+    steps:
+     - name: checkout-code
+       uses: actions/checkout@v5
 
-  - name: setup-nodejs
-    uses: setup-node@v3
-    with:
-     node-version: 16
+     - name: setup-nodejs
+       uses: setup-node@v3
+       with:
+        node-version: 16
 
-  - name: install dep
-    run: npm install
+     - name: install dep
+       run: npm install
 
-  - name: run test
-    run: npm run test    
+     - name: run test
+       run: npm run test    
         
       
